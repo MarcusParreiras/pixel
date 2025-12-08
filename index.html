@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="PIXEL – Grupo de Pesquisa em Jogos, Gamificação e Ferramentas de Game Design do CEFET/RJ."
+    content="PIXEL – Pesquisa Interdisciplinar em Experiências Lúdicas - CEFET/RJ."
   />
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -30,6 +30,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
@@ -48,9 +52,16 @@
       display: block;
     }
 
+    iframe {
+        border-radius: 0.75rem;
+        width: 100%;
+        margin-top: 1rem;
+        background: var(--bg-alt);
+    }
+
     .container {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
@@ -85,10 +96,9 @@
     }
 
     .brand-mark {
-      width: 42px; /* Ajustado para o logo */
+      width: 42px;
       height: 42px;
       object-fit: contain;
-      /* Removemos o background gradiente para usar o logo transparente */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -144,35 +154,6 @@
 
     .nav-links a:hover::after {
       width: 100%;
-    }
-
-    .nav-cta {
-      padding: 0.35rem 0.95rem;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: radial-gradient(
-        circle at top left,
-        rgba(34, 211, 238, 0.2),
-        transparent 60%
-      );
-      transition: background 0.12s ease, border-color 0.12s ease,
-        color 0.12s ease, transform 0.12s ease;
-    }
-
-    .nav-cta svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .nav-cta:hover {
-      border-color: rgba(34, 211, 238, 0.85);
-      color: var(--text);
-      transform: translateY(-1px);
     }
 
     .menu-toggle {
@@ -234,7 +215,7 @@
     }
 
     .hero-title {
-      font-size: clamp(2.3rem, 3vw, 2.8rem);
+      font-size: clamp(2rem, 3vw, 2.5rem);
       font-weight: 700;
       line-height: 1.1;
       margin-bottom: 0.8rem;
@@ -250,7 +231,7 @@
     .hero-subtitle {
       font-size: 1rem;
       color: var(--text-muted);
-      max-width: 34rem;
+      max-width: 38rem;
       margin-bottom: 1.4rem;
     }
 
@@ -324,13 +305,6 @@
       color: var(--text);
     }
 
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     .hero-logo-img {
       width: 100%;
       max-width: 500px;
@@ -343,7 +317,6 @@
         transform: scale(1.02) rotate(-1deg);
     }
 
-
     /* Sections base */
     section {
       scroll-margin-top: 80px;
@@ -354,236 +327,277 @@
     }
 
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1.5rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
     }
 
     .section-title {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .section-title i {
+      color: var(--accent);
     }
 
     .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 32rem;
-    }
-
-    /* Sobre */
-    .sobre-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2.4rem;
-      align-items: flex-start;
-    }
-
-    .sobre-text p {
       font-size: 0.95rem;
       color: var(--text-muted);
-      margin-bottom: 0.8rem;
+      margin-top: 0.5rem;
+      max-width: 45rem;
     }
 
-    .sobre-text p:last-child {
-      margin-bottom: 0;
-    }
-
-    .sobre-highlights {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .highlight-card {
-      background: rgba(15, 23, 42, 0.92);
-      border-radius: 0.9rem;
-      border: 1px solid rgba(30, 64, 175, 0.8);
-      padding: 0.8rem 0.9rem;
-    }
-
-    .highlight-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 0.25rem;
-    }
-
-    .highlight-value {
-      font-size: 0.95rem;
-    }
-
-    /* Projetos */
-    .projetos-list {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .projeto-item {
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
-      gap: 1.4rem;
-      padding: 1rem 1.1rem;
-      border-radius: 1rem;
-      border: 1px solid rgba(15, 23, 42, 1);
-      background: linear-gradient(
-        110deg,
-        rgba(15, 23, 42, 0.98),
-        rgba(8, 47, 73, 0.98)
-      );
-    }
-
-    .projeto-title {
-      font-size: 0.98rem;
+    /* Sub-headers for categories */
+    .category-title {
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .projeto-meta {
-      font-size: 0.75rem;
       color: var(--accent);
-      margin-bottom: 0.45rem;
-    }
-
-    .projeto-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .projeto-tags {
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.3rem;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .projeto-tag {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: var(--radius-full);
-      background: rgba(15, 23, 42, 0.82);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--text-muted);
-      white-space: nowrap;
+    .category-title:first-of-type {
+        margin-top: 1rem;
     }
 
-     /* Publicações */
-     .pub-lista {
+    /* Projetos & Publicações List */
+    .content-grid {
       display: grid;
-      gap: 0.7rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Projetos que têm embed iframe vão ocupar largura total em telas maiores se possível, 
+       mas manteremos no grid para consistência. Se quiser destaque, podemos mudar.
+       Para garantir que o iframe não quebre o layout, vamos ajustar o minmax se necessário.
+    */
+
+    .item-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.2rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .item-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .item-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .item-desc {
       font-size: 0.9rem;
       color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
     }
 
-    .pub-item {
-      padding: 0.6rem 0.7rem;
-      border-radius: 0.7rem;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(15, 23, 42, 1);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .pub-item:hover {
-      border-color: var(--accent);
-      transform: translateX(4px);
-    }
-
-    .pub-item strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .pub-meta {
+    .item-meta {
       font-size: 0.8rem;
       color: var(--accent);
-      margin-top: 0.1rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    /* Membros */
+    .membros-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .membro-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .membro-card:hover {
+      border-color: var(--accent);
+    }
+
+    .membro-avatar {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--border), var(--bg));
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .membro-nome {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+
+    .membro-funcao {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .membro-projeto {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        line-height: 1.3;
+    }
+    
+    .membro-projeto-list {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        line-height: 1.3;
+        margin-top: auto;
+    }
+    
+    .membro-projeto-list span {
+        display: block;
+        margin-bottom: 2px;
+    }
+    
+    .membro-projeto-label {
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 4px;
+        display: block;
+    }
+
+    /* Galeria */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 16/9;
+      background: var(--bg-alt);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .gallery-item:hover {
+        transform: scale(1.02);
+    }
+
+    .gallery-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #1e293b, #0f172a);
+      color: var(--text-muted);
+      font-size: 2rem;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.8);
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--text);
+      backdrop-filter: blur(4px);
     }
 
     /* Footer */
     .site-footer {
       border-top: 1px solid rgba(15, 23, 42, 1);
-      margin-top: 2rem;
-      padding: 1.2rem 0 1.6rem;
-      font-size: 0.8rem;
+      margin-top: 4rem;
+      padding: 3rem 0;
+      font-size: 0.9rem;
       color: var(--text-muted);
+      background: var(--bg-alt);
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
       flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
+      gap: 1.5rem;
     }
 
     /* Responsivo */
     @media (max-width: 900px) {
       .hero-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: 2.4rem;
+        gap: 3rem;
+        text-align: center;
+      }
+      
+      .hero-actions, .hero-tags {
+          justify-content: center;
       }
 
       .hero {
-        padding-top: 3.7rem;
-      }
-
-      .sobre-grid,
-      .projeto-item {
-        grid-template-columns: minmax(0, 1fr);
+        padding-top: 3rem;
       }
     }
 
     @media (max-width: 720px) {
       .nav-links {
+        display: none;
         position: absolute;
         inset-inline: 0;
         top: 100%;
-        padding: 0.8rem 1.5rem 1.2rem;
-        background: radial-gradient(
-            circle at top,
-            rgba(15, 23, 42, 0.98),
-            rgba(2, 6, 23, 0.98)
-          );
-        border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+        padding: 1.5rem;
+        background: rgba(5, 8, 22, 0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
         flex-direction: column;
-        align-items: flex-start;
-        transform: translateY(-8px);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.12s ease;
+        align-items: center;
+        gap: 1.5rem;
+        height: 100vh;
       }
 
       .nav-links.open {
-        opacity: 1;
-        pointer-events: auto;
+        display: flex;
       }
 
       .menu-toggle {
         display: inline-flex;
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-title {
-        font-size: 2.1rem;
       }
     }
   </style>
@@ -592,31 +606,22 @@
   <header class="site-header">
     <div class="container nav-inner">
       <a href="#inicio" class="brand">
-        <!-- Substituído pelo logo do cubo -->
         <img src="LOGO_PIXEL_CUBO.png" alt="Logo PIXEL" class="brand-mark" />
         <div class="brand-text">
           <div class="brand-title">PIXEL</div>
-          <div class="brand-subtitle">Pesquisa Interdisciplinar em Experiências Lúdicas</div>
+          <div class="brand-subtitle">Pesquisa Interdisciplinar</div>
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
+      <nav class="nav-links">
         <a href="#projetos">Projetos</a>
         <a href="#publicacoes">Publicações</a>
+        <a href="#membros">Membros</a>
+        <a href="#galeria">Galeria</a>
         <a href="#contato">Contato</a>
-        <a class="nav-cta" href="https://pixelcefet.itch.io" target="_blank">
-          Itch.io
-          <i data-lucide="gamepad-2"></i>
-        </a>
       </nav>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-      >
+      <button class="menu-toggle" aria-label="Abrir menu">
         <span></span>
       </button>
     </div>
@@ -628,12 +633,13 @@
         <div>
           <div class="hero-kicker">CEFET/RJ - Uned Nova Iguaçu</div>
           <h1 class="hero-title">
-            PIXEL: Laboratório de
-            <span>Jogos, Gamificação e Ferramentas de Game Design</span>
+            PIXEL: Pesquisa Interdisciplinar em
+            <span>Experiências Lúdicas</span>
           </h1>
           <p class="hero-subtitle">
             Articulamos pesquisa teórica e aplicada sobre experiências lúdicas,
             unindo game design, educação e ciências sociais em produtos inovadores.
+            <br><span style="color: var(--accent); display: block; margin-top: 0.5rem; font-weight: 500;">Laboratório de Jogos, Gamificação e Ferramentas de Game Design.</span>
           </p>
 
           <div class="hero-tags">
@@ -655,283 +661,618 @@
           </div>
         </div>
 
-        <aside class="hero-visual" aria-hidden="true">
-            <!-- Substituído pelo logo do Gameboy -->
+        <div class="hero-visual">
             <img src="pixelogodentro.png" alt="Console Gameboy PIXEL" class="hero-logo-img" />
-        </aside>
-      </div>
-    </section>
-
-    <section id="sobre" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Sobre o PIXEL</h2>
-            <p class="section-subtitle">
-              Pesquisa, desenvolvimento e extensão em experiências lúdicas.
-            </p>
-          </div>
-        </div>
-
-        <div class="sobre-grid">
-          <div class="sobre-text">
-            <p>
-              O PIXEL reúne pesquisadores, estudantes e colaboradores interessados em
-              investigar jogos e outras formas de ludicidade como objetos de estudo
-              e como ferramentas de mediação em contextos diversos.
-            </p>
-            <p>
-              O grupo produz pesquisa teórica e aplicada sobre experiências lúdicas, 
-              articulando diferentes áreas como game design, educação, comunicação, 
-              artes e ciências sociais.
-            </p>
-            <p>
-              As atividades incluem projetos de pesquisa, desenvolvimento de jogos,
-              orientação de trabalhos acadêmicos, organização de eventos e produção
-              de materiais didáticos e protótipos.
-            </p>
-          </div>
-
-          <div class="sobre-highlights">
-            <article class="highlight-card">
-              <div class="highlight-label">Instituição</div>
-              <div class="highlight-value">
-                CEFET/RJ - Campus Nova Iguaçu
-              </div>
-            </article>
-            <article class="highlight-card">
-              <div class="highlight-label">Coordenação</div>
-              <div class="highlight-value">
-                Prof. Marcus Parreiras
-              </div>
-            </article>
-            <article class="highlight-card">
-              <div class="highlight-label">Departamento</div>
-              <div class="highlight-value">
-                Coordenadoria de Engenharia de Produção
-              </div>
-            </article>
-          </div>
         </div>
       </div>
     </section>
 
+    <!-- PROJETOS -->
     <section id="projetos" class="section">
       <div class="container">
         <div class="section-header">
-          <div>
-            <h2 class="section-title">Nossos Jogos e Ferramentas</h2>
-            <p class="section-subtitle">
-              Disponíveis gratuitamente para download e uso acadêmico/educacional.
-            </p>
+          <h2 class="section-title"><i data-lucide="folder-open"></i> Nossos Projetos</h2>
+          <p class="section-subtitle">O portfólio completo de produção técnica e educativa do laboratório, dividido por categorias de desenvolvimento.</p>
+        </div>
+
+        <!-- Videogames -->
+        <h3 class="category-title"><i data-lucide="gamepad"></i> Videogames</h3>
+        <div class="content-grid">
+          <div class="item-card">
+            <div>
+                <div class="item-title">Jogo da Vida Universitária Digital (2024)</div>
+                <div class="item-desc">Simulação de gestão de tempo para calouros universitários.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="monitor"></i> Unity / WebGL</div>
+            <iframe frameborder="0" src="https://itch.io/embed/3041575" width="100%" height="167"><a href="https://parreiras.itch.io/jogo-da-vida-universitria-digital">Jogo da Vida Universitária Digital by parreiras, kaztro, beines, PIXEL - Pesquisa Interdisciplinar, gubahia</a></iframe>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Tubos de Ensaio 2 (2024)</div>
+                <div class="item-desc">RPG educativo focado no ensino de química inorgânica e reações.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="flask-conical"></i> RPG Maker</div>
+            <iframe frameborder="0" src="https://itch.io/embed/3041384" width="100%" height="167"><a href="https://parreiras.itch.io/tubos-de-ensaio-2">Tubos de Ensaio 2 by parreiras, ilanez-cmd, PIXEL - Pesquisa Interdisciplinar</a></iframe>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Processo em Jogo (2024)</div>
+                <div class="item-desc">Simulação sobre colação de grau extraordinária e processos burocráticos.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="file-text"></i> Simulação</div>
+            <iframe frameborder="0" src="https://itch.io/embed/3041369" width="100%" height="167"><a href="https://parreiras.itch.io/processo-em-jogo">Processo em Jogo by parreiras, Cj_hdsj, beines, vdiniz, PIXEL - Pesquisa Interdisciplinar</a></iframe>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Territórios em Transformação (2024)</div>
+                <div class="item-desc">Jogo digital sério para ensino em desenvolvimento urbano.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="map"></i> Estratégia</div>
+            <iframe frameborder="0" src="https://itch.io/embed/3041585" width="100%" height="167"><a href="https://parreiras.itch.io/territrios-em-transformacao">Territórios em Transformação by parreiras, PIXEL - Pesquisa Interdisciplinar</a></iframe>
+          </div>
+           <div class="item-card">
+            <div>
+                <div class="item-title">Bullwhip Game (Efeito Chicote) (2025)</div>
+                <div class="item-desc">Simulação da cadeia de suprimentos e logística.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="truck"></i> Logística</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Gestão da Qualidade (2025)</div>
+                <div class="item-desc">Demonstração do desenvolvimento administrativo-industrial.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="bar-chart-3"></i> Gestão</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">It's Revolution, Baby! (2025)</div>
+                <div class="item-desc">Videogame sobre Revoluções Industriais (1700-2025).</div>
+            </div>
+            <div class="item-meta"><i data-lucide="factory"></i> História/Tecnologia</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Batalha de Robôs (2025)</div>
+                <div class="item-desc">Jogo desenvolvido no âmbito de Iniciação Científica.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="bot"></i> IC</div>
           </div>
         </div>
 
-        <div class="projetos-list">
-          <article class="projeto-item">
+        <!-- Boardgames -->
+        <h3 class="category-title"><i data-lucide="dice-5"></i> Boardgames</h3>
+        <div class="content-grid">
+          <div class="item-card">
             <div>
-              <h3 class="projeto-title">
-                Jogo da Vida Universitária Digital
-              </h3>
-              <div class="projeto-meta">
-                Simulação · Gestão de Tempo · Educacional
-              </div>
-              <p class="projeto-desc">
-                Um jogo educativo projetado para ensinar aos calouros como gerenciar
-                seu tempo entre estudos, lazer e saúde mental no ambiente universitário.
-                Destaque em acessos no Itch.io.
-              </p>
+                <div class="item-title">ScrumSaga (2024)</div>
+                <div class="item-desc">Jogo de cartas para ensino de metodologias ágeis e gestão de projetos.</div>
             </div>
+            <div class="item-meta"><i data-lucide="printer"></i> Print & Play</div>
+            <iframe frameborder="0" src="https://itch.io/embed/3041561" width="100%" height="167"><a href="https://parreiras.itch.io/scrumsaga">ScrumSaga by parreiras, pedro31camilo, mareas7, rayy_alvs, PIXEL - Pesquisa Interdisciplinar</a></iframe>
+          </div>
+          <div class="item-card">
             <div>
-              <div class="projeto-tags">
-                <span class="projeto-tag">Unity</span>
-                <span class="projeto-tag">Extensão</span>
-                <span class="projeto-tag">Webgl</span>
-              </div>
-              <div style="margin-top: 1rem;">
-                <a href="https://pixelcefet.itch.io" target="_blank" class="membro-link">Jogar Agora</a>
-              </div>
+                <div class="item-title">Caminhos Conectados (2024)</div>
+                <div class="item-desc">Jogo de tabuleiro colaborativo para ensino em mobilidade urbana sustentável.</div>
             </div>
-          </article>
+            <div class="item-meta"><i data-lucide="map-pin"></i> Tabuleiro</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Ecomind (The Mind Ecológico) (2025)</div>
+                <div class="item-desc">Jogo de cartas cooperativo sobre tempo de decomposição de materiais.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="leaf"></i> Cartas</div>
+          </div>
+           <div class="item-card">
+            <div>
+                <div class="item-title">Eco Donut (2025)</div>
+                <div class="item-desc">Jogo sobre paradigmas e soluções econômicas para a Baixada Fluminense.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="doughnut"></i> Tabuleiro</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Cidade Verde (SD Game) (2025)</div>
+                <div class="item-desc">Jogo para o ensino de sustentabilidade ambiental.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="tree-deciduous"></i> Tabuleiro</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Zonas de Zero ou Baixa Emissão (2024)</div>
+                <div class="item-desc">Jogo sério para aprendizagem sobre zonas de emissão.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="wind"></i> Educativo</div>
+          </div>
+        </div>
 
-          <article class="projeto-item">
+        <!-- Livros-Jogos -->
+        <h3 class="category-title"><i data-lucide="book-open"></i> Livros-Jogos</h3>
+        <div class="content-grid">
+          <div class="item-card">
             <div>
-              <h3 class="projeto-title">
-                ScrumSaga
-              </h3>
-              <div class="projeto-meta">
-                Print to Play · Gestão de Projetos · Metodologias Ágeis
-              </div>
-              <p class="projeto-desc">
-                Um jogo de cartas (Print to Play) que ensina os princípios do SCRUM e gestão ágil. 
-                Os jogadores enfrentam desafios de projeto de forma colaborativa.
-              </p>
+                <div class="item-title">Livro-Jogo ACV</div>
+                <div class="item-desc">Narrativa interativa para ensino de Análise de Ciclo de Vida.</div>
             </div>
+            <div class="item-meta"><i data-lucide="book"></i> Ficção Interativa</div>
+          </div>
+          <div class="item-card">
             <div>
-              <div class="projeto-tags">
-                <span class="projeto-tag">Engenharia de Produção</span>
-                <span class="projeto-tag">Print to Play</span>
-                <span class="projeto-tag">Analógico</span>
-              </div>
-              <div style="margin-top: 1rem;">
-                <a href="https://pixelcefet.itch.io" target="_blank" class="membro-link">Baixar PnP</a>
-              </div>
+                <div class="item-title">LSS (Lean Six Sigma)</div>
+                <div class="item-desc">Livro-jogo focado em metodologias de qualidade.</div>
             </div>
-          </article>
+            <div class="item-meta"><i data-lucide="book"></i> Educativo</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Livro-Jogo via GAMBIT (2025)</div>
+                <div class="item-desc">Obra gerada utilizando o método GAMBIT com IA.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="sparkles"></i> IA Generativa</div>
+          </div>
+        </div>
 
-          <article class="projeto-item">
+        <!-- Ferramentas -->
+        <h3 class="category-title"><i data-lucide="wrench"></i> Ferramentas</h3>
+        <div class="content-grid">
+          <div class="item-card">
             <div>
-              <h3 class="projeto-title">
-                Tubos de Ensaio 2
-              </h3>
-              <div class="projeto-meta">
-                RPG · Química · Educacional
-              </div>
-              <p class="projeto-desc">
-                Um RPG educativo focado no ensino de química inorgânica. Os jogadores embarcam
-                em uma aventura onde precisam dominar reações químicas para avançar.
-              </p>
+                <div class="item-title">GAMBIT (2025)</div>
+                <div class="item-desc">Método para criação de livros-jogos utilizando Inteligência Artificial.</div>
             </div>
+            <div class="item-meta"><i data-lucide="brain-circuit"></i> Metodologia</div>
+          </div>
+           <div class="item-card">
             <div>
-              <div class="projeto-tags">
-                <span class="projeto-tag">RPG</span>
-                <span class="projeto-tag">Química</span>
-                <span class="projeto-tag">Educacional</span>
-              </div>
-              <div style="margin-top: 1rem;">
-                <a href="https://pixelcefet.itch.io" target="_blank" class="membro-link">Jogar Agora</a>
-              </div>
+                <div class="item-title">Pixel Calendar (2025)</div>
+                <div class="item-desc">Sistema interno de gestão de cronograma editorial desenvolvido em React.</div>
             </div>
-          </article>
+            <div class="item-meta"><i data-lucide="calendar"></i> Gestão</div>
+          </div>
+        </div>
 
-           <article class="projeto-item">
+        <!-- Gamificações -->
+        <h3 class="category-title"><i data-lucide="trophy"></i> Gamificações</h3>
+        <div class="content-grid">
+          <div class="item-card">
             <div>
-              <h3 class="projeto-title">
-                Processo em Jogo
-              </h3>
-              <div class="projeto-meta">
-                Simulação · Processos Acadêmicos · Gestão
-              </div>
-              <p class="projeto-desc">
-                Um jogo de simulação sobre a colação de grau extraordinária. 
-                O jogador deve navegar pelos processos burocráticos e administrativos
-                para alcançar o objetivo final da graduação.
-              </p>
+                <div class="item-title">Green Belt LSS</div>
+                <div class="item-desc">Gamificação de material de treinamento com base no ciclo PDCA e Lean Six Sigma.</div>
             </div>
+            <div class="item-meta"><i data-lucide="target"></i> Treinamento</div>
+          </div>
+          <div class="item-card">
             <div>
-              <div class="projeto-tags">
-                <span class="projeto-tag">Simulação</span>
-                <span class="projeto-tag">Gestão</span>
-                <span class="projeto-tag">BPMN</span>
-              </div>
-              <div style="margin-top: 1rem;">
-                <a href="https://pixelcefet.itch.io" target="_blank" class="membro-link">Jogar Agora</a>
-              </div>
+                <div class="item-title">Blockchain Academy (2025)</div>
+                <div class="item-desc">Gamificação de curso sobre Blockchain (Conceitual).</div>
             </div>
-          </article>
+            <div class="item-meta"><i data-lucide="graduation-cap"></i> Ensino</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Campeões do ENADE (2025)</div>
+                <div class="item-desc">Gamificação para preparação de alunos para o ENADE.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="award"></i> Preparatório</div>
+          </div>
+        </div>
+
+        <!-- Aplicativos -->
+        <h3 class="category-title"><i data-lucide="smartphone"></i> Aplicativos</h3>
+        <div class="content-grid">
+          <div class="item-card">
+            <div>
+                <div class="item-title">Campeões do ENADE (App) (2025)</div>
+                <div class="item-desc">Artefato digital de apoio para preparação de alunos para o ENADE.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="smartphone"></i> Mobile/Web</div>
+          </div>
+        </div>
+
+        <!-- Projetos de Extensão/Ensino -->
+        <h3 class="category-title"><i data-lucide="users"></i> Projetos de Ensino & Extensão</h3>
+        <div class="content-grid">
+          <div class="item-card">
+            <div>
+                <div class="item-title">Divulga PIXEL (2025)</div>
+                <div class="item-desc">Estratégias de visibilidade e democratização do acesso à produção do grupo.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="share-2"></i> Extensão</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">UPDATE</div>
+                <div class="item-desc">Núcleo de atualização de jogos, demos e projetos antigos do PIXEL.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="refresh-cw"></i> Ensino</div>
+          </div>
+          <div class="item-card">
+            <div>
+                <div class="item-title">Checkpoint</div>
+                <div class="item-desc">Encontros periódicos para playtest e feedback de projetos.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="flag"></i> Interno</div>
+          </div>
+           <div class="item-card">
+            <div>
+                <div class="item-title">Patente PIXEL</div>
+                <div class="item-desc">Projeto focado em registro de propriedade intelectual.</div>
+            </div>
+            <div class="item-meta"><i data-lucide="file-check"></i> Interno</div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- PUBLICAÇÕES -->
     <section id="publicacoes" class="section">
       <div class="container">
         <div class="section-header">
-          <div>
-            <h2 class="section-title">Produção Acadêmica</h2>
-            <p class="section-subtitle">
-              Artigos recentes publicados em congressos como SBGames.
-            </p>
+          <h2 class="section-title"><i data-lucide="scroll-text"></i> Produção Acadêmica</h2>
+          <p class="section-subtitle">Disseminação do conhecimento científico gerado pelo grupo em congressos e periódicos.</p>
+        </div>
+
+        <h3 class="category-title">Artigos Científicos</h3>
+        <div class="pub-lista">
+          <div class="pub-item">
+            <strong><a href="https://sol.sbc.org.br/index.php/sbgames/article/view/37359" target="_blank">SILVA, B. A. C. et al. Jogo da Vida Universitária Digital: um jogo educativo para ensinar gestão de tempo.</a></strong>
+            <div class="pub-meta">SBGames 2025 — Trilha Artes & Design.</div>
+          </div>
+          <div class="pub-item">
+            <strong><a href="https://sol.sbc.org.br/index.php/sbgames/article/view/37357" target="_blank">DINIZ, V. B. et al. Processo em Jogo: Transformando mapeamento de processos reais em jogos sérios e simulações.</a></strong>
+            <div class="pub-meta">SBGames 2025 — Trilha Computação & Educação.</div>
+          </div>
+          <div class="pub-item">
+            <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/37168" target="_blank">SILVA, F. R. et al. Cidade Verde (SD Game): um jogo para o ensino de sustentabilidade ambiental.</a></strong>
+            <div class="pub-meta">SBGames 2025 — Trilha Artes & Design (Resumo Estendido).</div>
+          </div>
+          <div class="pub-item">
+            <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/37143" target="_blank">Enigma Visual: Uma Proposta de Jogo para o Treinamento da Percepção Visual.</a></strong>
+            <div class="pub-meta">SBGames 2025 — Trilha Computação & Educação (Resumo Estendido).</div>
+          </div>
+          <div class="pub-item">
+            <strong><a href="https://doi.org/10.5753/sbgames_estendido.2024.241361" target="_blank">MELO, C. V.; PARREIRAS, M.; AZEVEDO, C. S.; XEXÉO, G. B.; MELLO, A. J. R. Proposta de utilização de um Jogo Sério para aprendizagem sobre Zonas de Zero e Baixa Emissão.</a></strong>
+            <div class="pub-meta">SBGames 2024 — Trilha Artes & Design (Resumo Estendido).</div>
+          </div>
+          <div class="pub-item">
+            <strong>Balanceamento Pokémon</strong>
+            <div class="pub-meta">Artigo (2025).</div>
+          </div>
+        </div>
+        
+        <h3 class="category-title">Dissertações de Mestrado</h3>
+        <div class="pub-lista">
+             <div class="pub-item">
+                <strong>LEZEZ (Proposta de utilização de um Jogo Sério para aprendizagem sobre Zonas de Zero e Baixa Emissão)</strong>
+                <div class="pub-meta">Dissertação (2024). Autora: Carmelita Vieira de Melo.</div>
+             </div>
+        </div>
+
+        <h3 class="category-title">Monografias (TCC)</h3>
+        <div class="pub-lista">
+             <div class="pub-item">
+                <strong>Campeões do ENADE</strong>
+                <div class="pub-meta">TCC de Graduação (2025). Autora: Kawany Bonfim.</div>
+             </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBROS -->
+    <section id="membros" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><i data-lucide="users-2"></i> Membros</h2>
+          <p class="section-subtitle">Quem faz o PIXEL acontecer: professores, alunos e colaboradores.</p>
+        </div>
+
+        <h3 class="category-title">Coordenação Geral</h3>
+        <div class="membros-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+          <div class="membro-card" style="border-color: var(--accent);">
+            <div class="membro-avatar">MP</div>
+            <div class="membro-nome">Marcus Parreiras</div>
+            <div class="membro-funcao">Coordenador Geral</div>
+            <div class="membro-projeto">Orientador Principal</div>
           </div>
         </div>
 
-        <div class="pub-lista">
-          <div class="pub-item">
-            <div>
-              <strong>
-                <a href="https://sol.sbc.org.br/index.php/sbgames/article/view/37359" target="_blank" style="text-decoration: underline; color: inherit;">
-                  SILVA, B. A. C.; CASTRO, K.; BAHIA, G.; PARREIRAS, M. et al. Jogo da Vida Universitária Digital: um jogo educativo para ensinar gestão de tempo.
-                </a>
-              </strong>
-              <div>
-                <span class="pub-meta">
-                  SBGames 2025 — Trilha Artes & Design.
-                </span>
-              </div>
+        <h3 class="category-title">Coordenadores de Projetos</h3>
+        <div class="membros-grid">
+          <div class="membro-card">
+            <div class="membro-avatar">LC</div>
+            <div class="membro-nome">Laryssa Curty</div>
+            <div class="membro-funcao">Coordenadora</div>
+            <div class="membro-projeto">Projeto ECOMIND</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">AM</div>
+            <div class="membro-nome">Aluisio Monteiro</div>
+            <div class="membro-funcao">Coordenador</div>
+            <div class="membro-projeto">Projeto BULLWHIP</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">TP</div>
+            <div class="membro-nome">Thiago Prego</div>
+            <div class="membro-funcao">Coordenador</div>
+            <div class="membro-projeto">Divulga PIXEL</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">WM</div>
+            <div class="membro-nome">Wladmir Motta</div>
+            <div class="membro-funcao">Coordenador</div>
+            <div class="membro-projeto">Eco Donut</div>
+          </div>
+        </div>
+
+        <h3 class="category-title">Parceiros</h3>
+        <div class="membros-grid">
+          <div class="membro-card">
+            <div class="membro-avatar">BB</div>
+            <div class="membro-nome">Bauer Bernardes</div>
+            <div class="membro-funcao">Professor</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">MS</div>
+            <div class="membro-nome">Marcelo Areas</div>
+            <div class="membro-funcao">Professor</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">RS</div>
+            <div class="membro-nome">Renato Alves</div>
+            <div class="membro-funcao">Professor</div>
+          </div>
+        </div>
+
+        <h3 class="category-title">Membros Ativos</h3>
+        <div class="membros-grid">
+          <div class="membro-card">
+            <div class="membro-avatar">BC</div>
+            <div class="membro-nome">Breno Costa</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Divulga PIXEL (2025)</span>
+                <span class="membro-projeto-label" style="margin-top: 4px;">Passado:</span>
+                <span>Jogo da Vida Universitária (2024)</span>
+                <span>Processo em Jogo (2024)</span>
+                <span>Cidade Verde (2024)</span>
             </div>
           </div>
-
-          <div class="pub-item">
-            <div>
-              <strong>
-                <a href="https://sol.sbc.org.br/index.php/sbgames/article/view/37357" target="_blank" style="text-decoration: underline; color: inherit;">
-                  DINIZ, V. B. et al. Processo em Jogo: Transformando mapeamento de processos reais em jogos sérios e simulações.
-                </a>
-              </strong>
-              <div>
-                <span class="pub-meta">
-                  SBGames 2025 — Trilha Computação & Educação.
-                </span>
-              </div>
+          <div class="membro-card">
+            <div class="membro-avatar">EL</div>
+            <div class="membro-nome">Eduarda Lopes</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Green Belt LSS</span>
             </div>
           </div>
-
-          <div class="pub-item">
-            <div>
-              <strong>
-                <a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/37168" target="_blank" style="text-decoration: underline; color: inherit;">
-                  SILVA, F. R. et al. Cidade Verde (SD Game): um jogo para o ensino de sustentabilidade ambiental.
-                </a>
-              </strong>
-              <div>
-                <span class="pub-meta">
-                  SBGames 2025 — Trilha Artes & Design (Resumo Estendido).
-                </span>
-              </div>
+          <div class="membro-card">
+            <div class="membro-avatar">FB</div>
+            <div class="membro-nome">Felipe Barcelos</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>It's Revolution, Baby!</span>
             </div>
           </div>
-
-          <div class="pub-item">
-            <div>
-              <strong>
-                <a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/37143" target="_blank" style="text-decoration: underline; color: inherit;">
-                  Enigma Visual: Uma Proposta de Jogo para o Treinamento da Percepção Visual.
-                </a>
-              </strong>
-              <div>
-                <span class="pub-meta">
-                  SBGames 2025 — Trilha Computação & Educação (Resumo Estendido).
-                </span>
-              </div>
+          <div class="membro-card">
+            <div class="membro-avatar">GN</div>
+            <div class="membro-nome">Gabriel Lucas</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Blockchain Academy</span>
             </div>
           </div>
-
-          <div class="pub-item">
-            <div>
-              <strong>
-                <a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/31987/31789" target="_blank" style="text-decoration: underline; color: inherit;">
-                  MELO, C. V.; PARREIRAS, M. et al. Proposta de utilização de um Jogo Sério para aprendizagem sobre Zonas de Zero e Baixa Emissão.
-                </a>
-              </strong>
-              <div>
-                <span class="pub-meta">
-                  SBGames 2024 — Trilha Artes & Design (Resumo Estendido).
-                </span>
-              </div>
+          <div class="membro-card">
+            <div class="membro-avatar">GB</div>
+            <div class="membro-nome">Gustavo Bahia</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>GAMBIT (2025)</span>
+                <span>Livro-Jogo via GAMBIT (2025)</span>
+                <span class="membro-projeto-label" style="margin-top: 4px;">Passado:</span>
+                <span>Jogo da Vida Universitária (2024)</span>
             </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">IS</div>
+            <div class="membro-nome">Ilanez Silva</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Batalha de Robôs (2025)</span>
+                <span class="membro-projeto-label" style="margin-top: 4px;">Passado:</span>
+                <span>Tubos de Ensaio 2 (2024)</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">JS</div>
+            <div class="membro-nome">Julia Serra</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">KC</div>
+            <div class="membro-nome">Kaua Castro</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Interesse em Jogos (IC)</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">KB</div>
+            <div class="membro-nome">Kawany Bonfim</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Campeões do ENADE</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">LL</div>
+            <div class="membro-nome">Lais Lopes</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Divulga PIXEL</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">LR</div>
+            <div class="membro-nome">Laura Rangel</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Bullwhip Game</span>
+                <span>Divulga PIXEL</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">LG</div>
+            <div class="membro-nome">Luiz Gustavo</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Livro-Jogo ACV</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">MP</div>
+            <div class="membro-nome">Maria Estela</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Eco Donut</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">VL</div>
+            <div class="membro-nome">Vivian Lauriano</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Gerenciamento de Projetos</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">MC</div>
+            <div class="membro-nome">Maria Clarissa</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Patente PIXEL</span>
+            </div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">MF</div>
+            <div class="membro-nome">Maria Eduarda F.</div>
+            <div class="membro-funcao">Graduação</div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Ecomind</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="category-title">Família PIXEL (Ex-Membros & Colaboradores)</h3>
+        <div class="membros-grid">
+           <div class="membro-card">
+            <div class="membro-avatar">CM</div>
+            <div class="membro-nome">Carmelita Melo</div>
+            <div class="membro-funcao">Pós-Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">PS</div>
+            <div class="membro-nome">Pedro Camilo</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">RL</div>
+            <div class="membro-nome">Renan Lima</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">AT</div>
+            <div class="membro-nome">Alec Gabriel</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">AA</div>
+            <div class="membro-nome">Alan Ananias</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">CH</div>
+            <div class="membro-nome">Célio Honorato</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">YA</div>
+            <div class="membro-nome">Yasmin Ambrozino</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">CR</div>
+            <div class="membro-nome">Cristiano Rezende</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">VD</div>
+            <div class="membro-nome">Vinícius Diniz</div>
+            <div class="membro-funcao">Graduação</div>
+          </div>
+          <div class="membro-card">
+            <div class="membro-avatar">MF</div>
+            <div class="membro-nome">Marlon Frescurato</div>
+            <div class="membro-funcao">Graduação</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- GALERIA -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title"><i data-lucide="image"></i> Galeria de Eventos</h2>
+          <p class="section-subtitle">Registros da participação do grupo PIXEL em congressos e eventos acadêmicos.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i data-lucide="camera"></i></div>
+            <div class="gallery-caption">SBGames 2024 - Manaus</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i data-lucide="camera"></i></div>
+            <div class="gallery-caption">SEPEX 2024 - CEFET/NI</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i data-lucide="camera"></i></div>
+            <div class="gallery-caption">SBGames 2025 - Salvador</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i data-lucide="camera"></i></div>
+            <div class="gallery-caption">SEPEX 2025 - Stand PIXEL</div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder"><i data-lucide="camera"></i></div>
+            <div class="gallery-caption">Confraternização 2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
     <section id="contato" class="section">
       <div class="container">
         <div class="section-header">
-          <div>
-            <h2 class="section-title">Conecte-se Conosco</h2>
-            <p class="section-subtitle">
-              Acompanhe nosso dia a dia e lançamentos.
-            </p>
-          </div>
+          <h2 class="section-title"><i data-lucide="mail"></i> Conecte-se Conosco</h2>
         </div>
 
         <div class="contato-wrapper">
@@ -942,7 +1283,6 @@
                 <a href="mailto:marcus.parreiras@cefet-rj.br">marcus.parreiras@cefet-rj.br</a>
               </div>
             </div>
-
             <div>
               <div class="contato-label">Localização</div>
               <div class="contato-value">
@@ -953,19 +1293,16 @@
           </div>
 
           <div class="highlight-card">
-            <div class="contato-label" style="margin-bottom: 1rem;">Redes Sociais Oficiais</div>
+            <div class="contato-label" style="margin-bottom: 1rem;">Redes Oficiais</div>
             <div style="display: flex; flex-direction: column; gap: 0.8rem;">
               <a href="https://pixelcefet.itch.io" target="_blank" class="btn-main" style="justify-content: center;">
-                <i data-lucide="gamepad-2"></i>
-                Itch.io (Jogos)
+                <i data-lucide="gamepad-2"></i> Itch.io
               </a>
               <a href="https://www.instagram.com/projetopixel.cefet/" target="_blank" class="btn-ghost" style="justify-content: center; background: rgba(15, 23, 42, 1);">
-                <i data-lucide="instagram"></i>
-                Instagram
+                <i data-lucide="instagram"></i> Instagram
               </a>
               <a href="https://www.linkedin.com/company/grupo-pixel-cefet" target="_blank" class="btn-ghost" style="justify-content: center; background: rgba(15, 23, 42, 1);">
-                <i data-lucide="linkedin"></i>
-                LinkedIn
+                <i data-lucide="linkedin"></i> LinkedIn
               </a>
             </div>
           </div>
@@ -976,57 +1313,25 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>
-        PIXEL – CEFET/RJ © 2025. Todos os direitos reservados.
-      </div>
+      <div>PIXEL – CEFET/RJ © 2025. Todos os direitos reservados.</div>
       <div class="footer-links">
         <a href="https://pixelcefet.itch.io">Itch.io</a>
         <a href="https://www.instagram.com/projetopixel.cefet/">Instagram</a>
-        <a href="https://www.linkedin.com/company/grupo-pixel-cefet">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Inicializar ícones Lucide
     lucide.createIcons();
-
-    // Menu mobile
+    
+    // Toggle Menu (Simples)
     const toggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
-
-    if (toggle && navLinks) {
-      toggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          if (navLinks.classList.contains("open")) {
-            navLinks.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
-          }
+    if(toggle){
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
         });
-      });
     }
-
-    // Rolagem suave
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
-      link.addEventListener("click", function (e) {
-        const targetId = this.getAttribute("href");
-        if (targetId.length > 1) {
-          const target = document.querySelector(targetId);
-          if (target) {
-            e.preventDefault();
-            window.scrollTo({
-              top: target.offsetTop - 72,
-              behavior: "smooth",
-            });
-          }
-        }
-      });
-    });
   </script>
 </body>
 </html>
