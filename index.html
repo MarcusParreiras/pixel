@@ -5,7 +5,6 @@
   <title>PIXEL – Pesquisa Interdisciplinar em Experiências Lúdicas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="PIXEL – Pesquisa Interdisciplinar em Experiências Lúdicas - CEFET/RJ." />
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root {
@@ -412,7 +411,7 @@
       align-items: center;
       margin-top: auto;
     }
-    
+     
     /* Pubs List */
     .pub-lista { display: flex; flex-direction: column; gap: 1rem; }
     .pub-item { padding-left: 1rem; border-left: 2px solid var(--accent-soft); transition: border-left-color 0.2s; }
@@ -446,8 +445,8 @@
     }
 
     .membro-avatar {
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       background: linear-gradient(135deg, var(--border), var(--bg));
       border-radius: 50%;
       margin: 0 auto 1rem;
@@ -457,7 +456,16 @@
       color: var(--text-muted);
       font-size: 1.5rem;
       font-weight: bold;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden; /* Importante para a imagem não vazar */
+      padding: 0;
+    }
+
+    .membro-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Garante que a foto preencha o círculo sem deformar */
+      display: block;
     }
 
     .membro-nome {
@@ -532,7 +540,7 @@
       color: var(--text-muted);
       font-size: 2rem;
     }
-    
+     
     .gallery-placeholder img {
       width: 100%;
       height: 100%;
@@ -578,13 +586,13 @@
         align-items: start;
         margin-top: 1.5rem;
     }
-    
+     
     .contato-info {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
     }
-    
+     
     .contato-label {
         font-size: 0.85rem;
         text-transform: uppercase;
@@ -593,12 +601,12 @@
         margin-bottom: 0.3rem;
         font-weight: 600;
     }
-    
+     
     .contato-value {
         font-size: 1rem;
         color: var(--text);
     }
-    
+     
     .highlight-card {
         background: rgba(34, 211, 238, 0.03);
         border: 1px solid rgba(34, 211, 238, 0.2);
@@ -763,7 +771,6 @@
       </div>
     </section>
 
-    <!-- PROJETOS -->
     <section id="projetos" class="section">
       <div class="container">
         <div class="section-header">
@@ -771,7 +778,6 @@
           <p class="section-subtitle">O portfólio completo de produção técnica e educativa do laboratório, dividido por categorias de desenvolvimento.</p>
         </div>
 
-        <!-- Videogames -->
         <h3 class="category-title"><i data-lucide="gamepad"></i> Videogames</h3>
         <div class="content-grid">
           <div class="item-card">
@@ -844,7 +850,6 @@
           </div>
         </div>
 
-        <!-- Boardgames -->
         <h3 class="category-title"><i data-lucide="dice-5"></i> Boardgames</h3>
         <div class="content-grid">
           <div class="item-card">
@@ -899,7 +904,6 @@
           </div>
         </div>
 
-        <!-- Gamificações -->
         <h3 class="category-title"><i data-lucide="trophy"></i> Gamificações & Ferramentas</h3>
         <div class="content-grid">
           <div class="item-card">
@@ -954,7 +958,6 @@
           </div>
         </div>
 
-        <!-- Aplicativos -->
         <h3 class="category-title"><i data-lucide="smartphone"></i> Aplicativos & Extensão</h3>
         <div class="content-grid">
           <div class="item-card">
@@ -1000,7 +1003,6 @@
       </div>
     </section>
 
-    <!-- PUBLICAÇÕES -->
     <section id="publicacoes" class="section">
       <div class="container">
         <div class="section-header">
@@ -1010,7 +1012,6 @@
 
         <h3 class="category-title">Artigos Científicos</h3>
         <div class="pub-lista">
-          <!-- 2025 -->
           <div class="pub-item">
             <span class="pub-year-badge">2025</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames/article/view/37359" target="_blank" class="pub-link">Jogo da Vida Universitária Digital: um jogo educativo para ensinar gestão de tempo</a></strong>
             <div class="pub-meta">SILVA, B. A. C. et al. (SBGames 2025).</div>
@@ -1032,13 +1033,11 @@
             <div class="pub-meta">Artigo (2025).</div>
           </div>
           
-          <!-- 2024 -->
           <div class="pub-item">
-             <span class="pub-year-badge">2024</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2024.241361" target="_blank" class="pub-link">Proposta de utilização de um Jogo Sério para aprendizagem sobre Zonas de Zero e Baixa Emissão</a></strong>
-             <div class="pub-meta">MELO, C. V.; PARREIRAS, M. et al. (SBGames 2024).</div>
+              <span class="pub-year-badge">2024</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2024.241361" target="_blank" class="pub-link">Proposta de utilização de um Jogo Sério para aprendizagem sobre Zonas de Zero e Baixa Emissão</a></strong>
+              <div class="pub-meta">MELO, C. V.; PARREIRAS, M. et al. (SBGames 2024).</div>
           </div>
 
-          <!-- 2023 -->
           <div class="pub-item">
             <span class="pub-year-badge">2023</span> <strong><a href="https://absel-ojs-ttu.tdl.org/absel/article/download/3353/3291" target="_blank" class="pub-link">An educational game about sustainability based on ESG+P concepts</a></strong>
             <div class="pub-meta">MAGALHAES, M. F. et al. (ABSEL 2023).</div>
@@ -1048,45 +1047,44 @@
             <div class="pub-meta">PARREIRAS, M. V. C.; OURIQUES, L.; XEXÉO, G. (SBGames 2023).</div>
           </div>
           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/27923" target="_blank" class="pub-link">Prototipagem de uma Plataforma de ensino de Reanimação Cardiopulmonar Pediátrica</a></strong>
-             <div class="pub-meta">PARREIRAS, M. V. C.; XEXÉO, G. (SBGames 2023).</div>
+              <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/27923" target="_blank" class="pub-link">Prototipagem de uma Plataforma de ensino de Reanimação Cardiopulmonar Pediátrica</a></strong>
+              <div class="pub-meta">PARREIRAS, M. V. C.; XEXÉO, G. (SBGames 2023).</div>
           </div>
           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames/article/view/27792" target="_blank" class="pub-link">A Taxonomy of Game Balancing Elements</a></strong>
-             <div class="pub-meta">PARREIRAS, M. V. C.; MARQUES, P.; XEXÉO, G. (SBGames 2023).</div>
+              <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames/article/view/27792" target="_blank" class="pub-link">A Taxonomy of Game Balancing Elements</a></strong>
+              <div class="pub-meta">PARREIRAS, M. V. C.; MARQUES, P.; XEXÉO, G. (SBGames 2023).</div>
           </div>
-           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.233886" target="_blank" class="pub-link">Aprendizado Baseado em Projetos em Desenvolvimento de Jogos Digitais.</a></strong>
-             <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2023).</div>
+            <div class="pub-item">
+              <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.233886" target="_blank" class="pub-link">Aprendizado Baseado em Projetos em Desenvolvimento de Jogos Digitais.</a></strong>
+              <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2023).</div>
           </div>
-           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.233889" target="_blank" class="pub-link">Aplicação de Técnicas de Gerenciamento de Projetos para Desenvolvimento de jogos</a></strong>
-             <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2023).</div>
+            <div class="pub-item">
+              <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.233889" target="_blank" class="pub-link">Aplicação de Técnicas de Gerenciamento de Projetos para Desenvolvimento de jogos</a></strong>
+              <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2023).</div>
           </div>
-           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/27929" target="_blank" class="pub-link">Gobble: A Decision-Based Game Proposal to Dietary Education</a></strong>
-             <div class="pub-meta">BATISTA, R. et al. (SBGames 2023).</div>
-          </div>
-          <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames/article/view/27818" target="_blank" class="pub-link">Exploring the Intersection of Game-Based Learning and Sustainable Education</a></strong>
-             <div class="pub-meta">UZEDA, L. E. et al. (SBGames 2023).</div>
+            <div class="pub-item">
+              <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/27929" target="_blank" class="pub-link">Gobble: A Decision-Based Game Proposal to Dietary Education</a></strong>
+              <div class="pub-meta">BATISTA, R. et al. (SBGames 2023).</div>
           </div>
           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.234198" target="_blank" class="pub-link">Caçador dos mares: um jogo de apoio ao ensino de noções básicas do plano cartesiano</a></strong>
-             <div class="pub-meta">AZEREDO, C. et al. (SBGames 2023).</div>
+              <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames/article/view/27818" target="_blank" class="pub-link">Exploring the Intersection of Game-Based Learning and Sustainable Education</a></strong>
+              <div class="pub-meta">UZEDA, L. E. et al. (SBGames 2023).</div>
           </div>
           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/27951" target="_blank" class="pub-link">Elementetris: Um jogo digital de apoio à aprendizagem de química</a></strong>
-             <div class="pub-meta">AZEREDO, C. et al. (SBGames 2023).</div>
+              <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.234198" target="_blank" class="pub-link">Caçador dos mares: um jogo de apoio ao ensino de noções básicas do plano cartesiano</a></strong>
+              <div class="pub-meta">AZEREDO, C. et al. (SBGames 2023).</div>
+          </div>
+          <div class="pub-item">
+              <span class="pub-year-badge">2023</span> <strong><a href="https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/27951" target="_blank" class="pub-link">Elementetris: Um jogo digital de apoio à aprendizagem de química</a></strong>
+              <div class="pub-meta">AZEREDO, C. et al. (SBGames 2023).</div>
           </div>
 
-          <!-- 2022 -->
           <div class="pub-item">
             <span class="pub-year-badge">2022</span> 
             <strong><a href="https://revistas.cefet-rj.br/index.php/producaoedesenvolvimento/article/view/609" target="_blank" class="pub-link">Board game proposal for cultural enhancement of territory and brazilian folklore</a></strong>
             <div class="pub-meta">PARREIRAS, M. V. C. et al. <em>Rev. Prod. Desenvolv.</em></div>
           </div>
-           <div class="pub-item">
+            <div class="pub-item">
             <span class="pub-year-badge">2022</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2022.226160" target="_blank" class="pub-link">Investigando o Fluxo de Conhecimento em FAQs de Jogos de Tabuleiro</a></strong>
             <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2022).</div>
           </div>
@@ -1114,7 +1112,6 @@
       </div>
     </section>
 
-    <!-- MEMBROS -->
     <section id="membros" class="section">
       <div class="container">
         <div class="section-header">
@@ -1125,7 +1122,9 @@
         <h3 class="category-title">Coordenação Geral</h3>
         <div class="membros-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
           <div class="membro-card" style="border-color: var(--accent);">
-            <div class="membro-avatar">MP</div>
+            <div class="membro-avatar">
+              <img src="assets/marcus_parreiras.jpg" alt="Marcus Parreiras" onerror="this.style.display='none'; this.parentNode.innerText='MP'">
+            </div>
             <div class="membro-nome">Marcus Parreiras</div>
             <div class="membro-funcao">Coordenador Geral</div>
             <div class="membro-projeto">Orientador Principal</div>
@@ -1135,25 +1134,33 @@
         <h3 class="category-title">Coordenadores de Projetos</h3>
         <div class="membros-grid">
           <div class="membro-card">
-            <div class="membro-avatar">LC</div>
+            <div class="membro-avatar">
+              <img src="assets/laryssa_curty.jpg" alt="Laryssa Curty" onerror="this.style.display='none'; this.parentNode.innerText='LC'">
+            </div>
             <div class="membro-nome">Laryssa Curty</div>
             <div class="membro-funcao">Coordenadora</div>
             <div class="membro-projeto">Projeto ECOMIND</div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">AM</div>
+            <div class="membro-avatar">
+              <img src="assets/aluisio_monteiro.jpg" alt="Aluisio Monteiro" onerror="this.style.display='none'; this.parentNode.innerText='AM'">
+            </div>
             <div class="membro-nome">Aluisio Monteiro</div>
             <div class="membro-funcao">Coordenador</div>
             <div class="membro-projeto">Projeto BULLWHIP</div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">TP</div>
+            <div class="membro-avatar">
+              <img src="assets/thiago_prego.jpg" alt="Thiago Prego" onerror="this.style.display='none'; this.parentNode.innerText='TP'">
+            </div>
             <div class="membro-nome">Thiago Prego</div>
             <div class="membro-funcao">Coordenador</div>
             <div class="membro-projeto">Divulga PIXEL</div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">WM</div>
+            <div class="membro-avatar">
+              <img src="assets/wladmir_motta.jpg" alt="Wladmir Motta" onerror="this.style.display='none'; this.parentNode.innerText='WM'">
+            </div>
             <div class="membro-nome">Wladmir Motta</div>
             <div class="membro-funcao">Coordenador</div>
             <div class="membro-projeto">Eco Donut</div>
@@ -1163,14 +1170,20 @@
         <h3 class="category-title">Parceiros</h3>
         <div class="membros-grid">
           <div class="membro-card">
-            <div class="membro-avatar">BB</div>
+            <div class="membro-avatar">
+              <img src="assets/bauer_bernardes.jpg" alt="Bauer Bernardes" onerror="this.style.display='none'; this.parentNode.innerText='BB'">
+            </div>
             <div class="membro-nome">Bauer Bernardes</div>
             <div class="membro-funcao">Professor</div>
+            <div class="membro-projeto">Tubos de Ensaio 2</div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">MA</div>
-            <div class="membro-nome">Marcelo Areas</div>
+            <div class="membro-avatar">
+              <img src="assets/marcelo_areas.jpg" alt="Marcelo Areas" onerror="this.style.display='none'; this.parentNode.innerText='MA'">
+            </div>
+            <div class="membro-nome">Marcelo Arêas</div>
             <div class="membro-funcao">Professor</div>
+            <div class="membro-projeto">Jogo da Vida Universitária Digital</div>
           </div>
         </div>
 
@@ -1393,7 +1406,6 @@
       </div>
     </section>
 
-    <!-- GALERIA -->
     <section id="galeria" class="section">
       <div class="container">
         <div class="section-header">
@@ -1427,7 +1439,6 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato" class="section">
       <div class="container">
         <div class="section-header">
@@ -1469,9 +1480,8 @@
       </div>
     </section>
   </main>
-  
-  <!-- Gallery Modal Structure -->
-    <div id="imageModal" class="modal">
+   
+  <div id="imageModal" class="modal">
         <span class="modal-close">&times;</span>
         <div style="display:flex; flex-direction:column; align-items:center;">
              <div id="modal-visual-container"></div>
@@ -1491,7 +1501,7 @@
 
   <script>
     lucide.createIcons();
-    
+     
     // Toggle Menu (Simples)
     const toggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -1500,7 +1510,7 @@
             navLinks.classList.toggle("open");
         });
     }
-    
+     
     // Gallery Modal Logic
     const modal = document.getElementById("imageModal");
     const modalVisual = document.getElementById("modal-visual-container");
@@ -1512,9 +1522,9 @@
             const img = item.querySelector('img');
             const icon = item.querySelector('i'); // Font icon
             const caption = item.querySelector('.gallery-caption').innerText;
-            
+             
             modalVisual.innerHTML = ''; // Clear previous
-            
+             
             if (img) {
                 const clone = img.cloneNode();
                 clone.className = "modal-content";
@@ -1540,9 +1550,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
