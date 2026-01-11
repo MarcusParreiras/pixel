@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <title>PIXEL – Pesquisa Interdisciplinar em Experiências Lúdicas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="PIXEL – Pesquisa Interdisciplinar em Experiências Lúdicas - CEFET/RJ."
-  />
+  <meta name="description" content="PIXEL – Pesquisa Interdisciplinar em Experiências Lúdicas - CEFET/RJ." />
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
@@ -52,6 +49,7 @@
       display: block;
     }
 
+    /* Iframes do Itch.io */
     iframe {
       border-radius: 0.75rem;
       width: 100%;
@@ -67,7 +65,7 @@
       padding: 0 1.5rem;
     }
 
-    /* Header / Navbar */
+    /* --- HEADER FORMATADO --- */
     .site-header {
       position: sticky;
       top: 0;
@@ -415,7 +413,7 @@
       margin-top: auto;
     }
     
-    /* Pubs List (Styles from previous updates) */
+    /* Pubs List */
     .pub-lista { display: flex; flex-direction: column; gap: 1rem; }
     .pub-item { padding-left: 1rem; border-left: 2px solid var(--accent-soft); transition: border-left-color 0.2s; }
     .pub-item:hover { border-left-color: var(--accent); }
@@ -521,6 +519,7 @@
 
     .gallery-item:hover {
       transform: scale(1.02);
+      border-color: var(--accent);
     }
 
     .gallery-placeholder {
@@ -606,6 +605,50 @@
         border-radius: 1rem;
         padding: 1.5rem;
     }
+
+    /* Styles for the Modal (Gallery Lightbox) */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s;
+        flex-direction: column;
+    }
+    .modal-content {
+        max-width: 90%;
+        max-height: 80vh;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+    }
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 101;
+    }
+    .modal-close:hover { color: var(--accent); }
+    .modal-caption {
+        margin-top: 1rem;
+        color: var(--text);
+        text-align: center;
+        font-size: 1.1rem;
+        max-width: 80%;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
 
     /* Responsivo */
     @media (max-width: 900px) {
@@ -997,7 +1040,7 @@
 
           <!-- 2023 -->
           <div class="pub-item">
-            <span class="pub-year-badge">2023</span> <strong>An educational game about sustainability based on ESG+P concepts.</strong>
+            <span class="pub-year-badge">2023</span> <strong><a href="https://absel-ojs-ttu.tdl.org/absel/article/download/3353/3291" target="_blank" class="pub-link">An educational game about sustainability based on ESG+P concepts</a></strong>
             <div class="pub-meta">MAGALHAES, M. F. et al. (ABSEL 2023).</div>
           </div>
           <div class="pub-item">
@@ -1017,7 +1060,7 @@
              <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2023).</div>
           </div>
            <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong>Aplicação de Técnicas de Gerenciamento de Projetos para Desenvolvimento de jogos.</strong>
+             <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.233889" target="_blank" class="pub-link">Aplicação de Técnicas de Gerenciamento de Projetos para Desenvolvimento de jogos</a></strong>
              <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2023).</div>
           </div>
            <div class="pub-item">
@@ -1029,7 +1072,7 @@
              <div class="pub-meta">UZEDA, L. E. et al. (SBGames 2023).</div>
           </div>
           <div class="pub-item">
-             <span class="pub-year-badge">2023</span> <strong>Caçador dos mares: um jogo de apoio ao ensino de noções básicas do plano cartesiano.</strong>
+             <span class="pub-year-badge">2023</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2023.234198" target="_blank" class="pub-link">Caçador dos mares: um jogo de apoio ao ensino de noções básicas do plano cartesiano</a></strong>
              <div class="pub-meta">AZEREDO, C. et al. (SBGames 2023).</div>
           </div>
           <div class="pub-item">
@@ -1044,11 +1087,11 @@
             <div class="pub-meta">PARREIRAS, M. V. C. et al. <em>Rev. Prod. Desenvolv.</em></div>
           </div>
            <div class="pub-item">
-            <span class="pub-year-badge">2022</span> <strong>Investigando o Fluxo de Conhecimento em FAQs de Jogos de Tabuleiro.</strong>
+            <span class="pub-year-badge">2022</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2022.226160" target="_blank" class="pub-link">Investigando o Fluxo de Conhecimento em FAQs de Jogos de Tabuleiro</a></strong>
             <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2022).</div>
           </div>
           <div class="pub-item">
-            <span class="pub-year-badge">2022</span> <strong>Proposta e Estudo de Caso de um Método para Design de Vídeo Games Educacionais.</strong>
+            <span class="pub-year-badge">2022</span> <strong><a href="https://doi.org/10.5753/sbgames_estendido.2022.226084" target="_blank" class="pub-link">Proposta e Estudo de Caso de um Método para Design de Vídeo Games Educacionais</a></strong>
             <div class="pub-meta">PARREIRAS, M. V. C. et al. (SBGames 2022).</div>
           </div>
         </div>
@@ -1150,19 +1193,28 @@
             <div class="membro-avatar">EL</div>
             <div class="membro-nome">Eduarda Lopes</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Green Belt LSS</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Green Belt LSS</span>
+            </div>
           </div>
           <div class="membro-card">
             <div class="membro-avatar">FB</div>
             <div class="membro-nome">Felipe Barcelos</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>It's Revolution, Baby!</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>It's Revolution, Baby!</span>
+            </div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">GL</div>
+            <div class="membro-avatar">GN</div>
             <div class="membro-nome">Gabriel Lucas</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Blockchain Academy</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Blockchain Academy</span>
+            </div>
           </div>
           <div class="membro-card">
             <div class="membro-avatar">GB</div>
@@ -1196,55 +1248,83 @@
             <div class="membro-avatar">KC</div>
             <div class="membro-nome">Kaua Castro</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Interesse em Jogos (IC)</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Interesse em Jogos (IC)</span>
+            </div>
           </div>
           <div class="membro-card">
             <div class="membro-avatar">KB</div>
             <div class="membro-nome">Kawany Bonfim</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Campeões do ENADE</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Campeões do ENADE</span>
+            </div>
           </div>
           <div class="membro-card">
             <div class="membro-avatar">LL</div>
             <div class="membro-nome">Lais Lopes</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Divulga PIXEL</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Divulga PIXEL</span>
+            </div>
           </div>
           <div class="membro-card">
             <div class="membro-avatar">LR</div>
             <div class="membro-nome">Laura Rangel</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Bullwhip Game</span><span>Divulga PIXEL</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Bullwhip Game</span>
+                <span>Divulga PIXEL</span>
+            </div>
           </div>
           <div class="membro-card">
             <div class="membro-avatar">LG</div>
             <div class="membro-nome">Luiz Gustavo</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Livro-Jogo ACV</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Livro-Jogo ACV</span>
+            </div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">ME</div>
+            <div class="membro-avatar">MP</div>
             <div class="membro-nome">Maria Estela</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Eco Donut</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Eco Donut</span>
+            </div>
           </div>
           <div class="membro-card">
             <div class="membro-avatar">VL</div>
             <div class="membro-nome">Vivian Lauriano</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Gerenciamento</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Gerenciamento de Projetos</span>
+            </div>
           </div>
-           <div class="membro-card">
+          <div class="membro-card">
             <div class="membro-avatar">MC</div>
             <div class="membro-nome">Maria Clarissa</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Patente PIXEL</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Patente PIXEL</span>
+            </div>
           </div>
-           <div class="membro-card">
+          <div class="membro-card">
             <div class="membro-avatar">MF</div>
             <div class="membro-nome">Maria Eduarda F.</div>
             <div class="membro-funcao">Graduação</div>
-            <div class="membro-projeto-list"><span>Ecomind</span></div>
+            <div class="membro-projeto-list">
+                <span class="membro-projeto-label">Ativo:</span>
+                <span>Ecomind</span>
+            </div>
           </div>
         </div>
 
@@ -1268,12 +1348,12 @@
             <div class="membro-projeto-list"><span>IC Tubos de Ensaio</span></div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">RA</div>
+            <div class="membro-avatar">RS</div>
             <div class="membro-nome">Renato Alves</div>
             <div class="membro-funcao">Graduação</div>
           </div>
           <div class="membro-card">
-            <div class="membro-avatar">AG</div>
+            <div class="membro-avatar">AT</div>
             <div class="membro-nome">Alec Gabriel</div>
             <div class="membro-funcao">Graduação</div>
           </div>
@@ -1390,6 +1470,15 @@
       </div>
     </section>
   </main>
+  
+  <!-- Gallery Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <div style="display:flex; flex-direction:column; align-items:center;">
+             <div id="modal-visual-container"></div>
+             <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -1412,6 +1501,43 @@
             navLinks.classList.toggle("open");
         });
     }
+    
+    // Gallery Modal Logic
+    const modal = document.getElementById("imageModal");
+    const modalVisual = document.getElementById("modal-visual-container");
+    const modalCaption = document.getElementById("modalCaption");
+    const closeBtn = document.querySelector(".modal-close");
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const icon = item.querySelector('i'); // Font icon
+            const caption = item.querySelector('.gallery-caption').innerText;
+            
+            modalVisual.innerHTML = ''; // Clear previous
+            
+            if (img) {
+                const clone = img.cloneNode();
+                clone.className = "modal-content";
+                modalVisual.appendChild(clone);
+            } else if (icon) {
+                 // Clone the icon logic or create a large icon representation
+                 const largeIcon = document.createElement('i');
+                 largeIcon.setAttribute('data-lucide', icon.getAttribute('data-lucide'));
+                 largeIcon.style.width = "100px";
+                 largeIcon.style.height = "100px";
+                 largeIcon.style.color = "var(--accent)";
+                 modalVisual.appendChild(largeIcon);
+                 lucide.createIcons(); // Re-render icons inside modal
+            }
+
+            modalCaption.innerText = caption;
+            modal.style.display = "flex";
+        });
+    });
+
+    closeBtn.onclick = () => { modal.style.display = "none"; }
+    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
   </script>
 </body>
 </html>
